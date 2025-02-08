@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDm9Qpv3uGByOVix841pKBCXIJhhblbwKQ",
-    authDomain: "bsu-mabini-comlab.firebaseapp.com",
-    databaseURL: "https://bsu-mabini-comlab-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "bsu-mabini-comlab",
-    storageBucket: "bsu-mabini-comlab.appspot.com",
-    messagingSenderId: "548993981418",
-    appId: "1:548993981418:web:b1f35c7b026c253c27b093"
+  apiKey: "AIzaSyD2Iyq9nbeNAAxHAjwGUH8W7jd6S6kIams",
+  authDomain: "database-comlab.firebaseapp.com",
+  databaseURL: "https://database-comlab-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "database-comlab",
+  storageBucket: "database-comlab.firebasestorage.app",
+  messagingSenderId: "703817968309",
+  appId: "1:703817968309:web:977de93e85d635bb6f2cfc"
 };
 
 firebase.initializeApp(firebaseConfig);

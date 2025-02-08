@@ -23,7 +23,7 @@
             <label for="srcode">SR-CODE</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" disabled>
             <label for="email">Email address</label>
         </div>
         <div class="form-floating mb-3">
@@ -31,15 +31,15 @@
             <label for="password">Password</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="firstName" placeholder="Juan">
+            <input type="text" class="form-control" id="firstName" placeholder="JUAN" style="text-transform: uppercase;">
             <label for="firstName">First Name</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="middleInitial" placeholder="A.">
+            <input type="text" class="form-control" id="middleInitial" placeholder="A." style="text-transform: uppercase;">
             <label for="middleInitial">Middle Initial</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="lastName" placeholder="Dela Cruz">
+            <input type="text" class="form-control" id="lastName" placeholder="DELA CRUZ" style="text-transform: uppercase;">
             <label for="lastName">Last Name</label>
         </div>
         <div class="d-grid mb-2">
@@ -49,9 +49,30 @@
             <span>Already have account? <a href="index.html">Login</a></span>
         </div>
     </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const srcodeInput = document.getElementById("srcode");
+            const emailInput = document.getElementById("email");
+
+            // Listen for changes in the SR-CODE field in real time
+            srcodeInput.addEventListener("input", () => {
+                const srcode = srcodeInput.value.trim(); // Get the trimmed value of the SR-CODE input
+
+                if (srcode) {
+                    // If SR-CODE is not empty, update the email field with the domain
+                    emailInput.value = `${srcode}@g.batstate-u.edu.ph`;
+                } else {
+                    // If SR-CODE is empty, clear the email field
+                    emailInput.value = "";
+                }
+            });
+        });
+    </script>
     <script src="js/reg.js"></script>
 </div>
 
 
 </body>
 </html>
+

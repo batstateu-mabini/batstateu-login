@@ -44,7 +44,7 @@
             <label for="srcode">SR-CODE</label>
         </div>
         <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" disabled>
             <label for="email">Email address</label>
         </div>
         <div class="form-floating">
@@ -89,6 +89,25 @@ inputs.forEach(input => {
 
 // Initial check on page load
 checkFormCompletion();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const srcodeInput = document.getElementById("srcode");
+    const emailInput = document.getElementById("email");
+
+    // Listen for changes in the SR-CODE field in real time
+    srcodeInput.addEventListener("input", () => {
+        const srcode = srcodeInput.value.trim(); // Get the trimmed value of the SR-CODE input
+
+        if (srcode) {
+            // If SR-CODE is not empty, update the email field with the domain
+            emailInput.value = `${srcode}@g.batstate-u.edu.ph`;
+        } else {
+            // If SR-CODE is empty, clear the email field
+            emailInput.value = "";
+        }
+    });
+});
+
 </script>
 
 <!-- Your JavaScript -->
@@ -96,3 +115,4 @@ checkFormCompletion();
 
 </body>
 </html>
+
